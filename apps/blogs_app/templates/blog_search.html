@@ -1,0 +1,40 @@
+
+{% extends './base.html' %}
+
+{% block title %} Search Page {% endblock title %}
+
+{% block main_content %}
+
+
+<div class="row" >
+
+
+
+<div class="form search-form  offset-3 my-5" style="margin-top: 10px;">
+  <h3 class="">Search blog here</h3>
+  <form action="" method="get">
+    <input type="text" name="search_query" id="search_query inline-block" class="" placeholder="Search blogs here ...">
+    <button type="submit" class="btn btn-sm btn-primary">Search Blogs</button>
+  </form>
+</div>
+</div>
+
+
+<div class="row">
+  
+
+  {% for blog in search_results %}
+    <div class="col-sm-10 my-3 jumbotron bg-dark text white offset-1">
+        <h1 class="display-4">{{blog.title}} </h1>
+        <p class="lead">{{blog.description}} .</p>
+        <hr class="my-4">
+        <p>Category: {{blog.category}} Author: {{blog.author}} Created: {{blog.created}} </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Read more</a>
+        </p>
+    </div>
+  {% endfor %}
+
+</div>
+
+{% endblock main_content %}
