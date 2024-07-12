@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blogs_app',
+    'django_elasticsearch_dsl',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +128,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+
+ELASTICSEARCH_DSL = {
+
+    'default': {
+        'hosts': 'http://localhost:9200'
+    }
+}
